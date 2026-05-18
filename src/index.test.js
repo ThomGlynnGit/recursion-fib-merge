@@ -1,8 +1,8 @@
 import { fibonacci, mergeSort } from "./index.js";
 
 describe("fibonacci", () => {
-  test("returns 0 if 0 provided", () => {
-    expect(fibonacci(0)).toBe([0]);
+  test("returns empty list if 0 provided", () => {
+    expect(fibonacci(0)).toStrictEqual([]);
   });
   test("returns correct sequence for n = 2", () => {
     expect(fibonacci(3)).toBe([0, 1, 1]);
