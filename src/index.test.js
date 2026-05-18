@@ -5,10 +5,10 @@ describe("fibonacci", () => {
     expect(fibonacci(0)).toStrictEqual([]);
   });
   test("returns correct sequence for n = 2", () => {
-    expect(fibonacci(3)).toBe([0, 1, 1]);
+    expect(fibonacci(3)).toStrictEqual([0, 1, 1]);
   });
   test("returns correct sequence for n = 8", () => {
-    expect(fibonacci(3)).toBe([0, 1, 1, 2, 3, 5, 8, 13]);
+    expect(fibonacci(8)).toStrictEqual([0, 1, 1, 2, 3, 5, 8, 13]);
   });
 });
 

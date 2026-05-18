@@ -1,5 +1,15 @@
-export function fibonacci(n) {
-  return n;
+export function fibonacci(n, result = [0, 1]) {
+  if (n <= 0) {
+    return [];
+  }
+  if (n === 1) {
+    return [0];
+  }
+  if (result.length === n) {
+    return result;
+  }
+  result.push(result[result.length - 1] + result[result.length - 2]);
+  return fibonacci(n, result);
 }
 
 export function mergeSort(list) {
@@ -10,7 +20,7 @@ function fibs(n) {
   if (n === 0) {
     return [];
   } else if (n === 1) {
-    return [0, 1];
+    return [0];
   } else {
     let result = [0, 1];
     for (let i = 2; i < n; i++) {
@@ -20,4 +30,4 @@ function fibs(n) {
   }
 }
 
-console.log(fibs(8));
+console.log(fibonacci(3));
