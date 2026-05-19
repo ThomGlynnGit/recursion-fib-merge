@@ -11,7 +11,28 @@ export function fibonacci(n, result = [0, 1]) {
 }
 
 export function mergeSort(list) {
-  return [];
+  if (list.length < 2) return list;
+  else {
+    let leftHalf = mergeSort(list.slice(0, Math.round(list.length / 2)));
+    let rightHalf = mergeSort(
+      list.slice(Math.round(list.length / 2), list.length),
+    );
+
+    console.log(leftHalf + "||" + rightHalf);
+    const result = [];
+    let i = 0;
+    let j = 0;
+    while (leftHalf.length !== i && rightHalf.length !== j) {
+      if (leftHalf[i] < rightHalf[j]) {
+        result.push(leftHalf[i]);
+        i++;
+      } else {
+        result.push(rightHalf[j]);
+        j++;
+      }
+    }
+    return [...result, ...leftHalf.slice(i), ...rightHalf.slice(j)];
+  }
 }
 
 function fibs(n) {
@@ -28,4 +49,4 @@ function fibs(n) {
   }
 }
 
-console.log(fibonacci(3));
+console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]));
